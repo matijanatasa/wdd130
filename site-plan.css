@@ -35,6 +35,8 @@ body {
   padding: 4em;
   font-size: 18px;
   text-align: center;
+  background: var(--primary-color);
+  color: white;
 }
 img {
   display: block;
