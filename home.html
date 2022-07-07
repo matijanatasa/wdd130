@@ -2,69 +2,27 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="site-plan.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Your Singing &mployee </title>
 
     <!-- CSS -->
+    <link rel="stylesheet" href="site-plan.css"> 
+
+    <!-- internal CSS -->
+
     <style>
 
-        /* header */
-        header {
-            display: flex;
-            align-items: center;
-        }
-
-        header img {
-            display: inline-block;
-        }
-
-        nav {
-            display: inline-flex;
-            width: 100%;
-            justify-content: space-evenly;
-        }
-
-        /* img */
-        main > img {
+        /* resize and round the initial image */
+        .introduction-img {
+            width: 70%;
             border-radius: 50%;
-            position: relative;
-            left: 10%;
-            padding: 7% 0;
-        }
-
-        /* utility classes */
-        main div:first-of-type {
-            display: flex;
-            align-items: center;
-            font-size: 2rem;
-            text-align: left;
-        }
-
-        main p {
-            margin-left: 4%;
-        }
-
-        .logo-group {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .logo-group * {
-            margin: 0;
-            padding: 0;
-            justify-self: center;
-        }
-        
-        /* footer */
-        footer {
-            margin-top: 7%;
+            margin: 50px auto;
         }
 
     </style>
+
+    <title> Your Singing &mployee </title>
 
 </head>
 
@@ -73,44 +31,53 @@
     <!-- header -->
     <header>
 
-        <!-- logo -->
-        <img src="logo.png" width="100" alt="logo-img">
+        <!-- wrapper div for flex layout reasons-->
+        <div class="my-nav">
 
-        <nav>
-            <a href="home.html">Home Page</a>
-            <a href="about.html">About Me</a>
-            <a href="about-music.html">About Music</a>
-            <a href="site-plan.html">Site Plan</a>
-        </nav>
+            <!-- logo -->
+            <img src="logo.png" alt="logo-img">
+
+            <nav>
+                <a href="home.html">Home Page</a>
+                <a href="about.html">About Me</a>
+                <a href="about-music.html">About Music</a>
+                <a href="index.html">Site Plan</a>
+            </nav>
+
+        </div>
 
     </header>
 
     <!-- main -->
     <main>
 
-        <img src="home.jpg" alt="vintage-img">
+        <!-- introduction image -->
+        <img class="introduction-img tooltip" src="home.jpg" alt="vintage-img">
 
-        <div>
+        <div class="flex-container give-space-between">
 
-            <img src="home2.jpg" width="30%" alt="singer-shadow-img">
+            <div class="overlay-title-container">
+                <img class="tooltip" src="home2.jpg" width="80%" alt="singer-shadow-img">
+                <p class="overlay-title">Singer</p>
+            </div>
 
-            <p>During your days at work things can get heavy at times, right? Or do your clients get bored? What if you had a coworker, assistant or some other employee who is also a professional singer and would very gladly sing a song for you or your clients while doing their job whenever asked? I am a professional singer who happens to learn fast pretty much any job. I can improve your days and your business productivity by lightening up your mood or the mood of your clients so they will seek your services more often.</p>
+            <p class="fs-l text-justify">During your days at work things can get heavy at times, right? Or do your clients get bored? What if you had a coworker, assistant or some other employee who is also a professional singer and would very gladly sing a song for you or your clients while doing their job whenever asked? I am a professional singer who happens to learn fast pretty much any job. I can improve your days and your business productivity by lightening up your mood or the mood of your clients so they will seek your services more often.</p>
 
         </div>
 
     </main>
        
     <!-- Footer -->
-    <footer>
+    <footer class="my-footer">
 
         <nav>
             <a href="">Your Singing &mployee &copy; 2022 - Matija Natasa Pavesi</a>
-            <a href="">Site Plan</a>
-            <a href="">About Me</a>
+            <a href="index.html">Site Plan</a>
+            <a href="about.html">About Me</a>
             <div class="logo-group">
-                <a href=""><img src="facebook.png" alt=""></a>
-                <a href=""><img src="twitter.png" alt=""></a>
-                <a href=""><img src="instagram.png" alt=""></a>
+                <a href="#"><img src="facebook.png" alt="facebook-logo"></a>
+                <a href="#"><img src="twitter.png" alt="twitter-logo"></a>
+                <a href="#"><img src="instagram.png" alt="instagram-logo"></a>
             </div>
         </nav>
 
