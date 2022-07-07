@@ -29,104 +29,296 @@ Fonts are separated by a | */
 
 /*  Look around below...but DON'T CHANGE ANYTHING! */
 
+/* GENERAL TAGS */
 body {
-  max-width: 1200px;
+  /* box modelling */
   margin: 0 auto;
   padding: 4em;
+  /* typography */
   font-size: 18px;
   text-align: center;
+  /* colors */
   background: var(--primary-color);
   color: white;
 }
-img {
-  display: block;
-  margin: 0 auto;
+
+/* make the navbar stick when scrolling the page */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 3;
 }
+
+/* give the header heading a white color */
+header h1, header h2 {
+  color: var(--headline-color-on-color);
+}
+
+nav a:hover {
+  background-color: var(--nav-hover-background-color);
+}
+
+main {
+  margin-bottom: 60px;
+}
+
+/* style the headings */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--heading-font);
   color: var(--headline-color-on-white);
 }
-h2 {
-  text-align: center;
-}
+
 hr {
+  /* box modelling */
   height: 3px;
   margin: 35px 0;
-  background: var(--accent1-color);
-}
-header {
-  padding: 1em;
-  text-align: center;
-  color: var(--paragraph-color-on-color);
-  background-color: var(--paragraph-background-color);
-}
-header > h1, header > h2 {
-  color: var(--headline-color-on-color);
+  border: 0;
+  /* colors */
+  background: var(--accent1-color); /* magenta */
 }
 
 p {
-  font-family: var(--paragraph-font);
-  color: var(--paragraph-color);
+  /* box modelling */
   padding: 1em;
+  /* typography */
+  font-family: var(--paragraph-font);
+  /* colors */
+  color: var(--paragraph-color);
 }
-.colors {
+
+a {
+  font-family: var(--paragraph-font)
+}
+
+
+/* GENERAL UTILITY CLASSES */
+/* ================ intra pages common nav bar ================ */
+.my-nav {
+  display: flex;
+}
+
+.my-nav img {
+  width: 70px;
+}
+
+.my-nav nav {
+  /* to stretch the nav bar across the entire header width */
+  flex-grow: 1;
+  /* to align the nav bar links */
+  display: flex;
+  /* colors */
+  background-color: var(--nav-background-color);
+}
+
+.my-nav a {
+  /* to stretch the link area across the entire space available */
+  flex-grow: 1;
+  /* to align the text of every link centerly */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* pure link style */
+  text-decoration: none;
+  color: white;
+}
+
+
+/* ================ intra pages common footer ================ */
+.my-footer nav {
+  display: flex;
+  background: var(--nav-background-color);
+  justify-content: space-between;
+}
+
+.my-footer a {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  font-size: 0.7rem;
+}
+
+.my-footer .logo-group {
+  display: flex;
+}
+
+
+/* ================ more general utility classes ================ */
+
+/* a div that ensure that the text part inside it will be displayed on top of the picture */
+.hovering-text {
+  /* make the position: absolute property works */
+  position: relative;
+  /* make the size of the div equal to the size of the image the text is designed for */
+  width: max-content;
+}
+
+.hovering-text h1,
+.hovering-text h2,
+.hovering-text h3,
+.hovering-text p {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* overlay title */
+.overlay-title-container {
+  /* allow absolute positioning */
+  position: relative;
+  /* make the container get the entire available space of the flex cell vertically */
+  align-self: stretch;
+  /* give the flex column a min-width */
+  min-width: 40%;
+}
+
+.overlay-title-container img {
+  /* let the image fullfil all the available space */
+  display: block;
   width: 100%;
-  min-width: 350px;
+}
+
+.overlay-title-container p {
+  margin: 0;
+}
+
+.overlay-title {
+  /* take the paragraph title out of the flow */
+  position: absolute;
+  /* place it at the bottom of its container */
+  bottom: 0;
+  /* stretch it across the entire parent width */
+  width: 100%;
+  /* hide the title */ 
+  opacity: 0;
+  /* make the hover effect smoother */
+  transition: opacity 300ms ease-in-out;
+
+  /* pure styling */
+  padding: 3vw 0; /* 0 is set to avoid horizontal padding overflow */
+  background: rgba(255, 255, 255, 50%);
+  color: black;
+}
+
+.overlay-title-container:hover .overlay-title {
+  opacity: 1;
+}
+
+
+
+/* handy way to align side by side elements */
+.flex-container {
+  display: flex;
+  align-items: center;
+}
+
+.flex-container * {
+  margin: 0;
+}
+
+/* give some air-space between the image and the paragraph */
+.give-space-between > div:first-child {
+  margin-right: 40px;
+}
+
+/* text-align utilities */
+.text-center { text-align: center }
+.text-left { text-align: left }
+.text-right { text-align: right }
+.text-justify { text-align: justify }
+
+/* font-size utilities */
+.fs-xs { font-size: 0.5rem }
+.fs-s { font-size: 0.7rem}
+.fs-normal { font-size: 1rem }
+.fs-m { font-size: 1.2rem}
+.fs-l { font-size: 1.5rem }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* SITE PLAN UTILITY CLASSES */
+
+/* keep the site-plan header specifications  */
+.site-plan header {
+  /* box modelling */
+  padding: 1em;
+  /* tipography */
+  text-align: center;
+  position: unset;
+}
+
+/* SITE-PLAN NAV -> navigation bar of the site plan */
+.site-plan nav {
+  display: flex;
+  justify-content: start;
+  width: 100%;
+  /* typography */
+  text-align: center;
+  font-size: 1.2rem;
+  /* colors */
+  background-color: var(--nav-background-color);
+}
+
+.site-plan nav a {
+  /* prevent the links from stretching too much */
+  min-width: 120px;
+  /* remove default browser styling decorations */
+  text-decoration: none;
+  /* box modelling */
+  padding: 1em 0.5em;
+  /* colors */
+  color: white;
+}
+
+/* resize only the images in the site plan */
+.site-plan img {
+  /* center all the images with reference to the parent's width */
+  /* display: block;
+  margin: 0 auto; */
+  height: 300px;
+}
+
+/* site plan palette table */
+.site-plan-color-table {
+  /* box modelling */
+  width: 100%;
   margin: 30px auto;
+  /* typography */
   text-align: center;
 }
-.colors th {
+
+.site-plan-color-table th {
   background-color: #999;
+  padding: 0;
+  margin: 0;
 }
-.colors td{
+.site-plan-color-table td{
+  /* center the cells with reference to the viewport */
   width: 25%;
   height: 3em;
 }
 
-.primary {
-  background-color: var(--primary-color);
-}
-.secondary {
-  background-color: var(--secondary-color);
-}
-.accent1 {
-  background-color: var(--accent1-color);
-}
-.accent2{
-  background-color: var(--accent2-color);
-}
+/* colors for the palette table cells */
+.primary { background-color: var(--primary-color) }
+.secondary { background-color: var(--secondary-color) }
+.accent1 { background-color: var(--accent1-color) }
+.accent2{ background-color: var(--accent2-color) }
 
-p.colored {
-  background-color: var(--paragraph-background-color);
-  color: var(--paragraph-color-on-color);
-}
-
-nav {
-  background-color: var(--nav-background-color);
-  line-height: 3em;
-  text-align: center;
-  font-size: 1.2em;
-}
-nav  {
-  list-style-type: none;
-  display: flex;
-
-}
-nav a {
-  padding:1em;
-  min-width: 120px;
-  text-decoration: none;
-  padding: 10px;
-
-}
-nav a:link, nav a:visited {
-  color: var(--nav-link-color);
-}
-nav a:hover {
-  color: var(--nav-hover-link-color);
-  background-color: var(--nav-hover-background-color);
-}
-
+/* SITE-PLAN SITE MAP */
+/* grid is used*/
 .sitemap {
   display: grid;
   justify-content: center;
@@ -175,3 +367,4 @@ nav a:hover {
   border-top: 1px solid;
   border-right: 1px solid;
 }
+
