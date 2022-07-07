@@ -10,57 +10,21 @@
     <!-- CSS -->
     <style>
 
-        /* header */
-        header {
-            display: flex;
-            align-items: center;
+        /* center the div and add some air-space */
+        .hovering-text {
+            margin: 70px auto;
         }
 
-        header img {
-            display: inline-block;
-        }
-
-        nav {
-            display: inline-flex;
-            width: 100%;
-            justify-content: space-evenly;
-        }
-
-        /* main */
-        .presentation-image {
-            width: max-content;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .presentation-image h2 {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
+        /* place the hovering text */
+        .hovering-text h2 {
+            /* give some space from the top */
+            top: 15%;
+            /* styling */
             color: white;
+            font-size: 3rem;
         }
 
-        .content-div {
-            margin: 7%;
-            display: flex;
-            font-size: 2rem;
-            align-items: center;
-            text-align: left;
-        }
-
-        /* footer */
-        /* utility classes */
-        .logo-group {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .logo-group * {
-            margin: 0;
-            padding: 0;
-            justify-self: center;
-        }
+        /* add more space between the image and the paragraph */
 
     </style>
 
@@ -68,8 +32,10 @@
 </head>
 <body>
 
-        <!-- header -->
-        <header>
+    <!-- header -->
+    <header>
+
+        <div class="my-nav">
 
             <!-- logo -->
             <img src="logo.png" width="100" alt="logo-img">
@@ -78,47 +44,53 @@
                 <a href="home.html">Home Page</a>
                 <a href="about.html">About Me</a>
                 <a href="about-music.html">About Music</a>
-                <a href="site-plan.html">Site Plan</a>
+                <a href="index.html">Site Plan</a>
             </nav>
-    
-        </header>
-    
-        <main>
 
-            <!-- presentation image -->
-            <div class="presentation-image">
+        </div>
+
+    </header>
+    
+    <!-- main -->
+    <main>
+
+        <!-- presentation image -->
+        <div class="hovering-text">
+            <div class="overlay-title-container">
                 <h2>ABOUT ME</h2>
-                <img src="./about_me2.jpg" alt="about-me">
+                <img src="./about_me2.jpg" alt="studio-img">
+                <p class="overlay-title">Studio</p>
             </div>
+        </div>
 
-            <!-- content div -->
-            <div class="content-div">
+        <!-- content div -->
+        <div class="flex-container give-space-between">
 
+            <div class="overlay-title-container">
                 <img src="about_me.jpg" width="30%" alt="about-me-img">
-    
-                <p>
-                
-                    My name is Matija Nataša and I’ve been singing since I was six in choirs and everywhere since I were a baby. 
-                Many times during my work hours I would start singing and things went smoother. That’s how I thought of making it officially so, 
-                that I should be a singing employee! I love learning new things and skills and that’s why I’m a fast learner. I’ve been a singer, 
-                a model, an interpreter, a translator, a teacher, an au pair, a shop assistant, a waitress, a hostess and I’ve acquired many skills 
-                from courses and life in general. Let me show you what I can do for you and your clients, I’ll work for you for free three days or 
-                more to show you my approach.
-                    
-                </p>
-    
+                <p class="overlay-title">Me</p>
             </div>
 
+            <p class="fs-l text-justify"> My name is Matija Nataša and I've been singing since I was six in choirs and everywhere since I were a baby. 
+            Many times during my work hours I would start singing and things went smoother. That's how I thought of making it officially so, 
+            that I should be a singing employee! I love learning new things and skills and that's why I'm a fast learner. I've been a singer, 
+            a model, an interpreter, a translator, a teacher, an au pair, a shop assistant, a waitress, a hostess and I've acquired many skills 
+            from courses and life in general. Let me show you what I can do for you and your clients, I'll work for you for free three days or 
+            more to show you my approach. 
+            </p>
 
-        </main>
+        </div>
 
-           <!-- Footer -->
-    <footer>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="my-footer">
 
         <nav>
             <a href="">Your Singing &mployee &copy; 2022 - Matija Natasa Pavesi</a>
-            <a href="">Site Plan</a>
-            <a href="">About Me</a>
+            <a href="index.html">Site Plan</a>
+            <a href="about.html">About Me</a>
             <div class="logo-group">
                 <a href=""><img src="facebook.png" alt=""></a>
                 <a href=""><img src="twitter.png" alt=""></a>
