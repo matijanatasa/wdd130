@@ -9,6 +9,23 @@
 
     <!-- CSS -->
     <style>
+        
+        /* place elements within a grid layout */      
+        main {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto auto;
+        }
+
+        main .hovering-text {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2
+        }
+
+        main .flex-container {
+            grid-column: 1 / 4;
+            grid-row: 3 / 4;
+        }
 
         /* center the div and add some air-space */
         .hovering-text {
