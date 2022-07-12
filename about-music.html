@@ -10,9 +10,33 @@
     <!-- CSS -->
     <style>
 
+        /* place elements in a grid layout 
+
+                LAYOUT
+                +------------------------+
+                |      (1fr, auto)       |
+                +------------------------+
+                |      (1fr, auto)       |
+                +------------------------+
+        */
+        main {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto;
+        }
+
         .hovering-text {
             margin: 70px auto;
             z-index: 0;
+            /* place the first div in the first row */
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+        }
+
+        .make-readable {
+            /* place the second div in the second row */
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
         }
 
         .hovering-text h2 {
